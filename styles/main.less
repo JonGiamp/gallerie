@@ -1,0 +1,121 @@
+@import (less) '_normalize.less';
+
+/************************************/
+/*              VARIABLES           */
+/************************************/
+@base-font-size: 16px;
+@grey: #e9ebee;
+
+
+/************************************/
+/*              MIXINS              */
+/************************************/
+@import (less) '_prefixer.less';
+
+
+
+
+/************************************/
+/*              CONFIG              */
+/************************************/
+*, *:before, *:after {
+    .border-box();
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    font-size: @base-font-size;
+    background-color: @grey;
+    line-height: 1.3;
+}
+
+.page-content {
+    .flex-block();
+    .flex-direction(row);
+    .flex-wrap(wrap);
+    .justify-content(space-around);
+    width: 100%;
+    padding: 20px;
+    a {
+        color: transparent;
+    }
+
+}
+
+.material-icons {
+    line-height: 2;
+}
+
+.demo-card-image.mdl-card {
+    width: 256px;
+    height: 256px;
+    margin-bottom: 20px;
+    background: url('../assets/demos/image_card.jpg');
+    background-position: center;
+    background-size: cover;
+
+}
+
+.demo-card-image > .mdl-card__actions {
+    height: 52px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.demo-card-image__filename {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.card {
+    position: relative;
+    height: auto;
+    width: 250px;
+    margin: 5px 0;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+
+}
+
+.card__image {
+    position: relative;
+    height: 262.5px;
+    max-width: 100%;
+
+}
+
+.card__infos {
+    position: relative;
+    height: 87.5px;
+    padding: 5px;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    .card:hover & {
+        display: block;
+        opacity: 1;
+    }
+
+}
+
+infos__titre {
+    position: relative;
+    display: block;
+    padding: 0.5rem;
+    margin: 0;
+     color: #000;
+    font-weight: 600;
+
+}
+
+@media screen and (min-device-width: 572px) {
+    .page-content {
+        padding: 20px 3px;
+    }
+}
