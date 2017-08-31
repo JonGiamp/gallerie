@@ -22,19 +22,9 @@ $.getJSON( "./data/data.json", function( data ) {
 });
 
 function loadPhoto(number) {
-
-    //var backgroundPhoto = "";
     var folder = content[number - 1];
 
     $(".page-content").html('');
-
-    /*$.each(content[number], function( val ) {
-
-       backgroundPhoto = "background-image: url('" + "album/" + folder + "/" + content[number][val] + "');";
-
-       $(".page-content").append('<div class="demo-card-image mdl-card mdl-shadow--2dp" style="' + backgroundPhoto + '"><div class="mdl-card__title mdl-card--expand"></div><div class="mdl-card__actions"><span class="demo-card-image__filename">' + content[number][val].split(".", 1) + '</span></div>');
-    });*/
-
     $.each(content[number], function( val ) {
 
         var titre = content[number][val].split(".", 1);
